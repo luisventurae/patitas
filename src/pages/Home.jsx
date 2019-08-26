@@ -1,32 +1,25 @@
 import React from 'react'
+import useGetPets from '../hooks';
+import PeetItem from '../components/PeetItem'
 
-const Home = () => (
-    <div className="Home">
-        <div className="Home-container">
-            <div className="Home-items">
+const API = 'https://us-central1-patitas-b0e03.cloudfunctions.net/api'
 
-                <div className="Pets">
-                    <div className="Pets-cover">
-                        <span>🐕</span>
-                        <div className="Pets-type">
-                            Adopción
-                        </div>
-                    </div>
-                    <div className="Pets-content">
-                        <div className="Pets-head">
-                            <h2>Doky</h2>
-                            <i>♂️</i>
-                        </div>
-                        <div className="Pets-date">
-                            <i>Icono</i>
-                            <span>Fecha</span>
-                        </div>
-                    </div>
+const Home = () => {
+    const pets = useGetPets(API)
+
+    return(
+        <div className="Home">
+            <div className="Home-container">
+                <div className="Home-items">
+
+                    {pets.map((pet, index) => 
+                        <PeetItem pet={pet} key={`pet-${index}`} />
+                    )}
+
                 </div>
-
             </div>
         </div>
-    </div>
-)
+    )
+}
 
 export default Home 
