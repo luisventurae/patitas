@@ -17,7 +17,7 @@ const Dashboard = () => (
                         <h4>Luis Ventura Eugenio</h4>
                         <span>Correo:</span>
                         <h4>luis@buzca.pe</h4>
-                        <button>Cerrar Sesion</button>
+                        <button>Cerrar Sesion</button> 
                     </div>
                 </div>
 

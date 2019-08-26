@@ -1,1 +1,4 @@
-# patitas.arepa.dev
+# Start
+npm run start
+# Build
+npm run build
