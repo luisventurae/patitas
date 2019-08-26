@@ -29,7 +29,7 @@ const Form  = () => {
         database.ref('pets') // Hacer referencia a la colección
         .push(data) // Guardar la data, 
         .then(response => {
-            setSendForm(true)
+            return setSendForm(true)
         }).catch(error => {
             console.error(error)
         })
@@ -46,7 +46,7 @@ const Form  = () => {
         .then((snapshot) => {
             snapshot.ref.getDownloadURL() // Obtener URL donde se subio la imagen
             .then(downloadURL => {
-                setPetPhoto(downloadURL)
+                return setPetPhoto(downloadURL)
             })
         })
     }
