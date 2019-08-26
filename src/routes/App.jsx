@@ -1,6 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Layout from '../components/Layout'
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import Dashboard from '../pages/Dashboard'
+import Pet from '../pages/Pet'
+import NotFound from '../pages/NotFound'
 import '../styles/global.css'
 
 const App = () => (
@@ -8,10 +13,11 @@ const App = () => (
     <Layout>
       <Switch>
 
-        <Route exact path="/" component={} />
-        <Route exact path="/mascota/:id" component={} />
-        <Route exact path="/login" component={} />
-        <Route exact path="/panel" component={} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/mascota/:id" component={Pet} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/panel" component={Dashboard} />
+        <Route component={NotFound} />
 
       </Switch>
     </Layout>
