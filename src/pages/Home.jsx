@@ -1,6 +1,7 @@
 import React from 'react'
-import useGetPets from '../hooks';
-import PeetItem from '../components/PeetItem'
+import { Link } from 'react-router-dom'
+import useGetPets from '../hooks'
+import PetItem from '../components/PetItem'
 
 const API = 'https://us-central1-patitas-b0e03.cloudfunctions.net/api'
 
@@ -13,7 +14,12 @@ const Home = () => {
                 <div className="Home-items">
 
                     {pets.map((pet, index) => 
-                        <PeetItem pet={pet} key={`pet-${index}`} />
+                        <Link to={{
+                            pathname: `/mascota/${index}-${pet.name}`,
+                            state: { ...pet } 
+                        }}>
+                            <PetItem pet={pet} key={`pet-${index}`} />
+                        </Link>
                     )}
 
                 </div>

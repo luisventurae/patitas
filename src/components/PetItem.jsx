@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment' // Modulopara manejar fechas
 
-const PeetItem = props => {
+const PetItem = props => {
     moment.locale('es') // Para mostrar resultados en español
     const date = moment(props.pet.date, 'YYYYMMDD').fromNow()  // Para dar formato a la fecha a partir de la fecha actual
 
@@ -41,4 +41,4 @@ const PeetItem = props => {
     )
 }
 
-export default PeetItem
+export default PetItem
